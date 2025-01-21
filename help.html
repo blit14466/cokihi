@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .help-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .faq-section, .contact-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="help-container">
+            <h2 class="text-center">Help</h2>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchBar" placeholder="Search FAQs">
+            </div>
+
+            <div class="faq-section">
+                <h3>FAQ</h3>
+                <div id="faq">
+                    <div class="faq-item">
+                        <h5>Signing Up</h5>
+                        <p>Information about how to sign up.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5>Sending Messages</h5>
+                        <p>Details on how to send messages.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5>Safety Tips</h5>
+                        <p>Important safety tips for users.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5>Privacy Policy</h5>
+                        <p>Our privacy policy details.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5>Terms of Service</h5>
+                        <p>The terms of service for our platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <p>If you have any questions, feel free to contact us at <a href="mailto:[email protected]">[email protected]</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('searchBar').addEventListener('input', function() {
+            var query = this.value.toLowerCase();
+            var faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                var text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
