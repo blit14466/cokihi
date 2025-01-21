@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .settings-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="settings-container">
+            <h2 class="text-center">Settings</h2>
+            <form id="settingsForm">
+                <h4>Privacy Options</h4>
+                <div class="form-group">
+                    <label for="messagePrivacy">Who can message me:</label>
+                    <select class="form-control" id="messagePrivacy">
+                        <option>Everyone</option>
+                        <option>Friends</option>
+                        <option>Only Me</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="friendListPrivacy">Who can see my friend list:</label>
+                    <select class="form-control" id="friendListPrivacy">
+                        <option>Everyone</option>
+                        <option>Friends</option>
+                        <option>Only Me</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="emailPrivacy">Who can see my email:</label>
+                    <select class="form-control" id="emailPrivacy">
+                        <option>Everyone</option>
+                        <option>Friends</option>
+                        <option>Only Me</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="onlineStatusPrivacy">Who can see me online:</label>
+                    <select class="form-control" id="onlineStatusPrivacy">
+                        <option>Everyone</option>
+                        <option>Friends</option>
+                        <option>Only Me</option>
+                    </select>
+                </div>
+
+                <h4>Account Management</h4>
+                <div class="form-group">
+                    <button type="button" class="btn btn-warning btn-block" id="deactivateAccount">Deactivate Account</button>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger btn-block" id="deleteAccount">Delete Account</button>
+                </div>
+
+                <h4>Change Password</h4>
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" class="form-control" id="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Confirm New Password</label>
+                    <input type="password" class="form-control" id="confirmNewPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('deleteAccount').addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete your account permanently?')) {
+                // Handle account deletion
+            }
+        });
+        document.getElementById('deactivateAccount').addEventListener('click', function() {
+            if (confirm('Are you sure you want to deactivate your account temporarily?')) {
+                // Handle account deactivation
+            }
+        });
+    </script>
+</body>
+</html>
